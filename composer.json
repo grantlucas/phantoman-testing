@@ -1,0 +1,25 @@
+{
+    "name": "grantlucas/phantoman-testing",
+    "description": "Repo for debugging and testing Codeception and Phantoman.",
+    "type": "project",
+    "require": {
+        "site5/phantoman": "^2.0.1",
+        "jakoch/phantomjs-installer": "^3.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Grant Lucas",
+            "email": "contact@grantlucas.com"
+        }
+    ],
+    "scripts": {
+      "post-install-cmd": [
+        "PhantomInstaller\\Installer::installPhantomJS"
+      ],
+      "post-update-cmd": [
+        "PhantomInstaller\\Installer::installPhantomJS"
+      ]
+    }
+
+}
