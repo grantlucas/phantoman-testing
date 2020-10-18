@@ -2,8 +2,15 @@
     "name": "grantlucas/phantoman-testing",
     "description": "Repo for debugging and testing Codeception and Phantoman.",
     "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/pwnyprod/phantoman"
+        }
+    ],
+
     "require": {
-        "site5/phantoman": "^2.0.1",
+        "site5/phantoman": "dev-master",
         "jakoch/phantomjs-installer": "^3.0"
     },
     "license": "MIT",
@@ -14,12 +21,15 @@
         }
     ],
     "scripts": {
-      "post-install-cmd": [
-        "PhantomInstaller\\Installer::installPhantomJS"
-      ],
-      "post-update-cmd": [
-        "PhantomInstaller\\Installer::installPhantomJS"
-      ]
+        "post-install-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS"
+        ],
+        "post-update-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS"
+        ]
+    },
+    "require-dev": {
+        "codeception/module-webdriver": "^1.1",
+        "codeception/module-asserts": "^1.3"
     }
-
 }
