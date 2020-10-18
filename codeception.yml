@@ -1,3 +1,20 @@
+suites:
+    acceptance:
+        actor: AcceptanceTester
+        path: .
+        modules:
+            enabled:
+                - WebDriver:
+                    url: https://google.com
+                    browser: phantomjs
+                    window_size: 1200x1200
+        extensions:
+            enabled:
+                - Codeception\Extension\RunFailed
+                - Codeception\Extension\Phantoman:
+                    ignoreSslErrors: true
+                    suites: ['acceptance']
+                - Codeception\Extension\Recorder
 paths:
     tests: tests
     output: tests/_output
